@@ -28,9 +28,9 @@
         "name": "Wenlin Zhang"
       }
     ],
-    "concept_doi": null,
+    "concept_doi": "10.5281/zenodo.24410080",
     "current_version": 3,
-    "doi": null,
+    "doi": "10.5281/zenodo.24410081",
     "lean_source": {
       "revision": "736015507f370926a4b39c6a5ca4f090fc50cae3",
       "url": "https://github.com/the-omega-institute/trureturing/blob/736015507f370926a4b39c6a5ca4f090fc50cae3/D5/S3/FiniteGroups/FactorialProductNonunique.lean"

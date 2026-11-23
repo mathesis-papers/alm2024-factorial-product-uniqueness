@@ -5,13 +5,15 @@
 We answer Problem 5.6 of Aivazidis, Loukaki and Müller in the negative (J. Group Theory 27 (2024), p. 1281): the product of the weights f(m)=m!/m^m does not determine a finite set of distinct integers greater than one. The same example answers arXiv:2209.00986v1, Problem 12.6, and v2, Problem 5.6. The two disjoint eighteen-element sets have equal products and equal parameter sums. Their equality follows from the adjacent-weight identity f(n+1)/f(n)=(n/(n+1))^n and an explicit prime-exponent table. For every cardinality at least nineteen, infinitely many rational values have two distinct representations with equal cardinalities and equal sums.
 
 - PDF: [frozen public file](paper.pdf)
+- DOI: [https://doi.org/10.5281/zenodo.24410081](https://doi.org/10.5281/zenodo.24410081)
+- Concept DOI: [https://doi.org/10.5281/zenodo.24410080](https://doi.org/10.5281/zenodo.24410080)
 - License: CC-BY-4.0
 - Version: 3
 - Mathesis record: [alm2024-factorial-product-uniqueness](https://mathesis-omega-research.apps.chrono-ai.fun/papers/alm2024-factorial-product-uniqueness?version=3)
 
 ## How to cite
 
-Haobo Ma, Wenlin Zhang (2026). Equal products of m!/m^m over distinct parameter sets. Mathesis, version 3. https://mathesis-omega-research.apps.chrono-ai.fun/papers/alm2024-factorial-product-uniqueness?version=3
+Haobo Ma, Wenlin Zhang (2026). Equal products of m!/m^m over distinct parameter sets. Mathesis, version 3. https://doi.org/10.5281/zenodo.24410081
 
 ## Statement progress
 
