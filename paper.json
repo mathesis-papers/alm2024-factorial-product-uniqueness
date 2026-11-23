@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 72735,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "17b018b9733343fa0587dccf7e68faa94e87bfbb8d88f1f4491f9d67c9f7ab4f",
+      "sha256": "17b018b9733343fa0587dccf7e68faa94e87bfbb8d88f1f4491f9d67c9f7ab4f"
+    },
+    "source": {
+      "bytes": 10596,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "957f61d305444b002cec3be1fbd4afaea9dc1ff79246a655c7a9efb1804f300a",
+      "sha256": "957f61d305444b002cec3be1fbd4afaea9dc1ff79246a655c7a9efb1804f300a"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "We answer Problem 5.6 of Aivazidis, Loukaki and Müller in the negative (J. Group Theory 27 (2024), p. 1281): the product of the weights f(m)=m!/m^m does not determine a finite set of distinct integers greater than one. The same example answers arXiv:2209.00986v1, Problem 12.6, and v2, Problem 5.6. The two disjoint eighteen-element sets have equal products and equal parameter sums. Their equality follows from the adjacent-weight identity f(n+1)/f(n)=(n/(n+1))^n and an explicit prime-exponent table. For every cardinality at least nineteen, infinitely many rational values have two distinct representations with equal cardinalities and equal sums.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 3,
+    "doi": null,
+    "lean_source": {
+      "revision": "736015507f370926a4b39c6a5ca4f090fc50cae3",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/736015507f370926a4b39c6a5ca4f090fc50cae3/D5/S3/FiniteGroups/FactorialProductNonunique.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 72735,
+      "sha256": "17b018b9733343fa0587dccf7e68faa94e87bfbb8d88f1f4491f9d67c9f7ab4f",
+      "url": "/api/v1/collected-papers/alm2024-factorial-product-uniqueness/files/pdf?version=3"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-23T03:24:39.912748146Z",
+    "record": "alm2024-factorial-product-uniqueness",
+    "repository_name": "alm2024-factorial-product-uniqueness",
+    "source": {
+      "bytes": 10596,
+      "sha256": "957f61d305444b002cec3be1fbd4afaea9dc1ff79246a655c7a9efb1804f300a",
+      "url": "/api/v1/collected-papers/alm2024-factorial-product-uniqueness/files/source?version=3"
+    },
+    "title": "Equal products of m!/m^m over distinct parameter sets",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-23T03:24:39.912748146Z",
+        "revision": "3",
+        "version": 3
+      }
+    ],
+    "work": "alm2024-factorial-product-uniqueness"
+  }
+}

@@ -1,0 +1,237 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=26mm]{geometry}
+\usepackage{amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[T1]{fontenc}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\title{Equal products of $m!/m^m$ over distinct parameter sets}
+\author{Haobo Ma\thanks{ChronoAI Pte Ltd, Singapore.}\and
+Wenlin Zhang\thanks{National University of Singapore; ChronoAI Pte Ltd, Singapore.}}
+\date{November 12, 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We answer Problem 5.6 of Aivazidis, Loukaki and M\"uller in the negative
+(\emph{J. Group Theory} \textbf{27} (2024), p.~1281): the product of the weights $f(m)=m!/m^m$
+does not determine a finite set of distinct integers greater than one.
+The same example answers arXiv:2209.00986v1, Problem 12.6, and v2, Problem 5.6.
+The two disjoint eighteen-element sets have equal products and equal parameter
+sums. Their equality follows from the adjacent-weight identity
+$f(n+1)/f(n)=(n/(n+1))^n$ and an explicit prime-exponent table.
+For every cardinality at least nineteen, infinitely many rational values
+have two distinct representations with equal cardinalities and equal sums.
+\end{abstract}
+
+\section{The question and the counterexample}
+For an integer $m\geq2$, set $f(m)=m!/m^m$. For a finite set
+$S\subseteq\{2,3,\ldots\}$, write
+\[
+ F(S)=\prod_{m\in S}f(m),\qquad F(\varnothing)=1.
+\]
+Aivazidis, Loukaki and M\"uller ask, ``Does Theorem 4.6 generalise?''
+In particular, they ask whether equality between two such products
+forces equality of the parameters after rearrangement
+\cite[Problem~5.6, p.~1281]{ALM}. Equivalently, is the map $S\mapsto F(S)$
+injective? The same question appears in their preprint
+\cite[arXiv:2209.00986v2, Problem~5.6, p.~37]{ALMpre}. Its first version, dated September 2,
+2022, poses the question without the distinctness restriction as
+Problem~12.6 on p.~38 \cite[arXiv:2209.00986v1]{ALMv1}; the example below has distinct
+parameters even across its two sides.
+
+\begin{theorem}\label{thm:counterexample}
+The disjoint sets
+\begin{align*}
+ A={}&\{10,17,21,23,24,27,38,45,46,48,56,65,68,77,80,84,95,141\},\\
+ B={}&\{11,16,20,22,25,26,39,44,47,49,57,64,69,76,81,85,94,140\}
+\end{align*}
+satisfy $F(A)=F(B)$. In particular, the answer to Problem~5.6 is negative
+even when both sides have eighteen parameters and all thirty-six parameters
+are distinct. Moreover, $\sum_{a\in A}a=\sum_{b\in B}b=965$.
+\end{theorem}
+
+\begin{proof}
+Define the two sets of starting indices
+\begin{align*}
+ U&=\{16,20,22,26,44,64,76,94,140\},\\
+ V&=\{10,24,38,46,48,56,68,80,84\}.
+\end{align*}
+For an integer $n\geq2$, put
+\begin{equation}\label{eq:adjacent}
+ r(n)=\frac{f(n+1)}{f(n)}
+ =\frac{(n+1)!}{(n+1)^{n+1}}\frac{n^n}{n!}
+ =\left(\frac{n}{n+1}\right)^n.
+\end{equation}
+This identity already occurs in the proof of the source's prime-side
+uniqueness theorem \cite[Theorem~4.6, p.~1263]{ALM}; the multiplicative
+relation below uses distinct adjacent pairs.
+For a prime $p$ and a positive rational number $x$, let $v_p(x)$ be the
+exponent of $p$ in its prime factorization; this exponent can be negative.
+For $S=U,V$, define
+\[
+ E_p(S)=\sum_{n\in S} n\bigl(v_p(n)-v_p(n+1)\bigr)
+       =v_p\!\left(\prod_{n\in S}r(n)\right).
+\]
+Factoring the displayed integers gives the following table:
+\begin{center}
+\small
+\setlength{\tabcolsep}{4.3pt}
+\begin{tabular}{@{}lrrrrrrrrrr@{}}
+\toprule
+$p$ &2&3&5&7&11&13&17&19&23&47\\
+\midrule
+$E_p(U)$ &1150&$-326$&$-42$&44&$-10$&$-38$&$-16$&$-18$&$-22$&$-46$\\
+$E_p(V)$ &1150&$-326$&$-42$&44&$-10$&$-38$&$-16$&$-18$&$-22$&$-46$\\
+\bottomrule
+\end{tabular}
+\end{center}
+No other prime divides any of $n$ or $n+1$ for $n\in U\cup V$.
+For example, $140=2^2\cdot5\cdot7$ and $141=3\cdot47$, so the
+term $n=140$ contributes $280, -140, 140, 140, -140$ at primes
+$2,3,5,7,47$, respectively. Thus the two products of adjacent ratios are
+both
+\begin{equation}\label{eq:certificate}
+ \prod_{n\in U}r(n)=\prod_{n\in V}r(n)
+ =\frac{2^{1150}7^{44}}
+ {3^{326}5^{42}11^{10}13^{38}17^{16}19^{18}23^{22}47^{46}}.
+\end{equation}
+For any set $S$ of integers, write $S+1=\{n+1:n\in S\}$.
+All elements of $U\cup V$ are distinct and even. Hence their adjacent
+pairs $\{n,n+1\}$ are pairwise disjoint. In particular,
+\[
+ A=V\cup(U+1),\qquad B=U\cup(V+1).
+\]
+Substituting \eqref{eq:adjacent} into \eqref{eq:certificate} and multiplying
+by $F(U)F(V)$ proves $F(A)=F(B)$. The disjointness and cardinalities follow
+from the eighteen disjoint adjacent pairs. Every parameter exceeds one,
+and $10\in A\setminus B$, so the sets are different.
+Finally, each side chooses nine upper and nine lower endpoints of the same
+eighteen pairs. Both sums are therefore
+$\sum_{n\in U\cup V}n+9=956+9=965$.
+\end{proof}
+
+\begin{corollary}\label{cor:extensions}
+For every integer $k\geq18$, there are distinct $k$-element sets
+$A_k,B_k\subseteq\{2,3,\ldots\}$ with $F(A_k)=F(B_k)$ and
+$|A_k\mathbin{\triangle}B_k|=36$, where $\triangle$ denotes symmetric
+difference. Their parameter sums are equal. More generally, any finite set
+$C$ disjoint from $A\cup B$ can be adjoined to both sides, giving equal
+products and equal sums $965+\sum_{c\in C}c$.
+\end{corollary}
+\begin{proof}
+Choose any $(k-18)$-element set $C$ disjoint from $A\cup B$, and take
+$A_k=A\cup C$ and $B_k=B\cup C$. Both products are multiplied by $F(C)$,
+and their symmetric difference is $A\cup B$. Their sums both increase by
+$\sum_{c\in C}c$. For $k>18$ these two sets share $C$; disjointness is
+asserted for the original pair, not for its common-parameter extensions.
+\end{proof}
+
+\begin{corollary}\label{cor:infinite}
+For each integer $k\geq19$, infinitely many positive rational numbers are
+values of $F$ at two different $k$-element sets with equal parameter sums.
+\end{corollary}
+\begin{proof}
+Fix a $(k-19)$-element set $D$ disjoint from $A\cup B$. For each integer
+$c>\max(A\cup B\cup D)$, adjoin $D\cup\{c\}$ to both $A$ and $B$.
+The common product is $F(A)F(D)f(c)$. Equation~\eqref{eq:adjacent} gives
+$0<f(c+1)<f(c)$, so these common products are pairwise different.
+\end{proof}
+
+\begin{corollary}\label{cor:comparable}
+Suppose $a_1<\cdots<a_k$ and $b_1<\cdots<b_k$ are integers greater than
+one, with $a_i\leq b_i$ for every $i$. Then
+$\prod_i f(a_i)\geq\prod_i f(b_i)$, with equality exactly when
+$a_i=b_i$ for every $i$.
+\end{corollary}
+\begin{proof}
+Equation~\eqref{eq:adjacent} makes $f$ positive and strictly decreasing
+on the integers greater than one. Thus every factor on the left is at
+least its corresponding factor on the right, and any strict parameter
+inequality gives a strict product inequality.
+\end{proof}
+
+\section{Source coverage and mathematical evidence}
+The prime-restricted uniqueness theorem
+\cite[Theorem~4.6, p.~1263]{ALM} remains distinct from Problem~5.6:
+it requires one side to consist of distinct primes and permits arbitrary
+integer parameters on the other side. Both sets in
+Theorem~\ref{thm:counterexample} contain composite integers, so they do not
+meet that prime-side hypothesis. The example concerns the arithmetic
+question and imposes no group-realization condition. It also shows that
+prescribing both cardinality and parameter sum does not restore unrestricted
+uniqueness; this strengthened uniqueness assertion was not posed in the source.
+
+The source's majorisation comparisons \cite[Appendix~A, pp.~1281--1283]{ALM}
+have a different hypothesis. In decreasing order, the first partial sums
+are $141>140$, but the first nine give $714<715$. Thus the two vectors
+are incomparable in weak majorisation. The complete partial-sum lists are
+supplied by \texttt{verify.py}.
+
+\begin{center}
+\small
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.31\linewidth}>{\raggedright\arraybackslash}p{0.62\linewidth}@{}}
+\toprule
+Source item & Coverage\\
+\midrule
+Problem~5.6, p.~1281 & Answered: no. Theorem~\ref{thm:counterexample} gives disjoint eighteen-element sets with equal products and equal sums.\\
+Problem~12.6 in v1, p.~38 & Answered: no; the same example also permits the original unrestricted lists.\\
+Theorem~4.6, pp.~1263--1265 & Prior proof cited: uniqueness with one side consisting of distinct primes.\\
+Appendix~A, pp.~1281--1283 & Prior comparison results cited; the witness is incomparable in weak majorisation.\\
+Problem~5.1, p.~1280 & Not covered: realization by finite groups and subgroups.\\
+Problem~5.2, p.~1280 & Not covered: normal-extension inequality and its equality cases.\\
+Problem~5.3, p.~1280 & Not covered: equality for direct products.\\
+Problem~5.4, p.~1280 & Not covered: infinite-group formulation.\\
+Problem~5.5, p.~1280 & Not covered: comparison with commuting probability and equality cases.\\
+Problem~5.7, p.~1281 & Not covered: comparison for nested subgroups.\\
+Problem~5.8, p.~1281 & Not covered: cyclic prime-power subgroup attaining the minimum.\\
+Uniqueness at fixed size and sum & Not asserted in the source; fails for the displayed eighteen-element sets of sum $965$.\\
+Extensions not posed there & Proved: Corollaries~\ref{cor:extensions}--\ref{cor:comparable}.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection*{Verification scope}
+The pinned Lean declaration
+\href{https://github.com/the-omega-institute/trureturing/blob/736015507f370926a4b39c6a5ca4f090fc50cae3/D5/S3/FiniteGroups/FactorialProductNonunique.lean}{\texttt{FactorialProductNonunique.result}}
+proves $\neg\texttt{claim}$, where \texttt{claim} asserts that for all finite
+subsets $A,B$ of the natural numbers whose elements exceed one, equality of
+the factorial-weight products implies $A=B$. Its witness is exactly the
+two sets above. Its weight is
+\href{https://github.com/the-omega-institute/trureturing/blob/736015507f370926a4b39c6a5ca4f090fc50cae3/D5/S3/FiniteGroups/TransversalProbabilityMonotone.lean}{\texttt{TransversalProbabilityMonotone.orbitWeight}},
+defined by $(m!:\mathbb Q)/(m:\mathbb Q)^m$. This is $f(m)$ on the
+stated domain. This declaration does not state the equal-sum or
+arbitrary-cardinality conclusions. The adjacent-ratio argument and
+Corollaries~\ref{cor:extensions}--\ref{cor:comparable} are written proofs. The accompanying
+\texttt{verify.py} checks the explicit factorial products and the exponent
+table, parameter sums and majorisation partial sums using exact integer and
+rational arithmetic. It also tests finitely many common-parameter extensions;
+the conclusions for all cardinalities and infinitely many values follow
+from the written proofs. The weight's dependency file also contains a
+normal-extension probability theorem, which is not needed for this argument.
+
+\begin{thebibliography}{3}
+\bibitem{ALM}
+S.~Aivazidis, M.~Loukaki and T.~W.~M\"uller,
+\emph{On the common transversal probability},
+J.~Group Theory \textbf{27} (2024), no.~6, 1233--1285.
+\href{https://doi.org/10.1515/jgth-2024-0030}{doi:10.1515/jgth-2024-0030}.
+
+\bibitem{ALMpre}
+S.~Aivazidis, M.~Loukaki and T.~W.~M\"uller,
+\emph{On the common transversal probability in finite groups},
+\href{https://arxiv.org/abs/2209.00986v2}{arXiv:2209.00986v2},
+May 31, 2023.
+
+\bibitem{ALMv1}
+S.~Aivazidis, M.~Loukaki and T.~W.~M\"uller,
+\emph{On the common transversal probability in finite groups},
+\href{https://arxiv.org/abs/2209.00986v1}{arXiv:2209.00986v1},
+September 2, 2022; Problem~12.6, p.~38.
+\end{thebibliography}
+
+\bigskip
+\noindent\footnotesize
+\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under \href{https://creativecommons.org/licenses/by/4.0/}{Creative
+Commons Attribution 4.0 International (CC BY 4.0)}.
+\end{document}
