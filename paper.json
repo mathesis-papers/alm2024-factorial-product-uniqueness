@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24410080",
     "current_version": 3,
     "doi": "10.5281/zenodo.24410081",
+    "kind": "note",
     "lean_source": {
       "revision": "736015507f370926a4b39c6a5ca4f090fc50cae3",
       "url": "https://github.com/the-omega-institute/trureturing/blob/736015507f370926a4b39c6a5ca4f090fc50cae3/D5/S3/FiniteGroups/FactorialProductNonunique.lean"
@@ -55,10 +56,12 @@
     "title": "Equal products of m!/m^m over distinct parameter sets",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-23T03:24:39.912748146Z",
         "revision": "3",
-        "version": 3
+        "version": 3,
+        "version_label": null
       }
     ],
     "work": "alm2024-factorial-product-uniqueness"
